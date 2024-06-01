@@ -5,7 +5,7 @@ defmodule GraphqlServerWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", GraphqlServerWeb do
+  scope "/" do
     pipe_through :api
 
 

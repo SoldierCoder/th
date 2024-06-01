@@ -2,8 +2,8 @@ defmodule GraphqlServerWeb.Schema do
   use Absinthe.Schema
 
   import_types GraphqlServerWeb.Types.User
-  import_types GraphqlServerWeb.Queries.User
-# import_types GraphqlServerWeb.Mutations.User
+  import_types GraphqlServerWeb.Schema.Queries.User
+# import_types GraphqlServerWeb.Schema.Mutations.User
 
   query do
     import_fields(:user_queries)
