@@ -9,6 +9,12 @@ defmodule GraphqlServerWeb.Resolvers.User do
     User.find(%{id: id})
   end
 
- # def create(params, _),  do: User.create(params)
- # def update(params, _),  do: User.update(params)
+  def create(params, _) do
+
+    %{id: id} = params
+    id = String.to_integer(id)
+    sanitized_params = Map.put(params, :id, id)
+    User.create(sanitized_params)
+  end
+
 end

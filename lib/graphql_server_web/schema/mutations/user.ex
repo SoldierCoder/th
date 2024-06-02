@@ -8,7 +8,7 @@ defmodule GraphqlServerWeb.Schema.Mutations.User do
       arg :email, :string
       arg :preferences, :communication_preferences
 
-      resolve(&GraphqlServerWeb.Resolvers.user.create/1)
+      resolve(&GraphqlServerWeb.Resolvers.User.create/1)
 
     end
 
@@ -17,11 +17,8 @@ defmodule GraphqlServerWeb.Schema.Mutations.User do
       arg :name, :string
       arg :email, :string
       
-      resolve(&GraphqlServerWeb.Resolvers.user.update/1)
+      resolve(&GraphqlServerWeb.Resolvers.User.update/1)
     end
-
-      
-
   end
 end
 

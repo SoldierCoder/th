@@ -16,7 +16,6 @@ defmodule GraphqlServerWeb.Types.User do
     field(:likes_faxes, :boolean)
   end    
 
-
   @desc "A User w/ Id, Name, Email, and Communication Preferences"
   object :user do
     field(:id, :id)

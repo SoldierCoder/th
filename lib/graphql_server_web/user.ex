@@ -63,7 +63,11 @@ defmodule GraphqlServerWeb.User do
   # TODO 
   # Add code here for the mutations
 
-#  def create(params) do
-#    id = String.to_integer(params.id)
-
+  def create(params) do
+    %{id: id} = params
+    case Enum.find(@users, &(&1.id == id)) do
+      nil -> {:ok, params}
+      user -> {:error, %{message: "User already exists!", details: %{id: id}}}
+    end
+  end
 end
